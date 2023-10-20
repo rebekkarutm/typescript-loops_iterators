@@ -1,3 +1,4 @@
+// data provided by Smári
 type Info = {
     count: number,
     next: string | null,
@@ -25,7 +26,8 @@ type Info = {
     url: string,
   }
   fetch('https://rickandmortyapi.com/api/character').then((r) => r.json()).then((json:{info:Info, results:Character[] }) => {
-    json.results.forEach((character) => {
+  // creating a forEach loop that returns all of the information I want in one log
+  json.results.forEach((character) => {
       console.log(`Name: ${character.name} ||| ` + `Origin: ${character.origin.name} ||| ` + `Species: ${character.species} ||| ` + `Number of episodes: ${character.episode.length}`)
     })
   });
